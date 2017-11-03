@@ -4,6 +4,10 @@ RUN mkdir /home/Nginx
 
 RUN cd /home/Nginx
 
+RUN apt-get update
+
+RUN apt-get install wget
+
 #Install Nginx
 
 #Download the Nginx repository signing key
