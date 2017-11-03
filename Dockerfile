@@ -1,5 +1,9 @@
 FROM debian:stretch
 
+RUN mkdir /home/Nginx
+
+RUN cd /home/Nginx
+
 #Install Nginx
 
 #Download the Nginx repository signing key
@@ -18,4 +22,4 @@ RUN apt-get update; apt-get -y install nginx
 #Start the Nginx service after the installation
 RUN systemctl start nginx.service
 
-EXPOSE 80
+EXPOSE 22
