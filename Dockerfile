@@ -1,7 +1,5 @@
 FROM debian:stretch
 
-RUN sudo su
-
 #Install Nginx
 
 #Download the Nginx repository signing key
