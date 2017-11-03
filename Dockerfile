@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-#Install Nginx
+#Install Nginx test-build
 
 #Download the Nginx repository signing key
 RUN wget http://nginx.org/keys/nginx_signing.key
