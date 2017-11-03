@@ -8,7 +8,7 @@ RUN apt-get update
 
 RUN apt-get -y install wget
 
-RUN apt-get install gnupg gnupg1 gnupg2
+RUN apt-get -y install gnupg gnupg1 gnupg2
 
 #Install Nginx
 
