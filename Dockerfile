@@ -19,8 +19,8 @@ RUN wget http://nginx.org/keys/nginx_signing.key
 RUN apt-key add nginx_signing.key
 
 #Append Nginx repository to /etc/apt/sources.list file
-RUN echo "deb http://nginx.org/packages/debian/ stretch nginx" | sudo tee -a /etc/apt/sources.list
-RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" | sudo tee -a /etc/apt/sources.list
+RUN echo "deb http://nginx.org/packages/debian/ stretch nginx" | tee -a /etc/apt/sources.list
+RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" | tee -a /etc/apt/sources.list
 
 #Install Nginx package using the following command
 RUN apt-get update; apt-get -y install nginx
