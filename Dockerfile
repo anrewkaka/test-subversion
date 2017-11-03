@@ -6,7 +6,7 @@ RUN cd /home/Nginx
 
 RUN apt-get update
 
-RUN apt-get install wget
+RUN apt-get -y install wget
 
 #Install Nginx
 
