@@ -24,7 +24,7 @@ RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" | tee -a /etc
 #Install Nginx package using the following command
 RUN apt-get update; apt-get -y install nginx
 
-RUN curl -i -X POST -H "Content-type: application/json" http://localhost'
+RUN curl -i -X POST -H "Content-type: application/json" http://localhost
 
 EXPOSE 80
 
