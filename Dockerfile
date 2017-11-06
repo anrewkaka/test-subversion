@@ -1,5 +1,7 @@
 FROM debian:stretch
 
+# add some text
+
 RUN mkdir /home/Nginx
 
 RUN cd /home/Nginx
