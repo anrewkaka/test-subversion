@@ -28,5 +28,5 @@ RUN apt-get update; apt-get -y install nginx
 EXPOSE 22
 
 #Start the Nginx service after the installation
-#RUN systemd start nginx.service 
+#RUN systemd start nginx.service
 CMD ["nginx", "-g", "daemon off;"]
