@@ -2,17 +2,14 @@ FROM debian:stretch
 
 # add some text
 
-RUN mkdir /home/Nginx
-
-RUN cd /home/Nginx
-
-RUN apt-get update
-
-RUN apt-get -y install wget
-
-RUN apt-get -y install gnupg gnupg1 gnupg2
-
-#Install Nginx
+RUN mkdir /home/Nginx \
+    && cd /home/Nginx \
+    && apt-get update \
+    && apt-get -y install wget \
+    curl \
+    gnupg \
+    gnupg1 \
+    gnupg2
 
 #Download the Nginx repository signing key
 RUN wget http://nginx.org/keys/nginx_signing.key
@@ -27,7 +24,9 @@ RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" | tee -a /etc
 #Install Nginx package using the following command
 RUN apt-get update; apt-get -y install nginx
 
-EXPOSE 22
+RUN curl http://localhost
+
+EXPOSE 80
 
 #Start the Nginx service after the installation
 #RUN systemd start nginx.service
