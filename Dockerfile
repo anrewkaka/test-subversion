@@ -25,7 +25,8 @@ RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" | tee -a /etc
 #Install Nginx package using the following command
 RUN apt-get update; apt-get -y install nginx
 
-#Start the Nginx service after the installation
-RUN systemd start nginx.service
-
 EXPOSE 22
+
+#Start the Nginx service after the installation
+#RUN systemd start nginx.service
+CMD ["nginx", "-g", "daemon off;"]
