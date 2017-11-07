@@ -9,13 +9,12 @@ RUN mkdir /home/svn \
 	&& libapache2-mod-svn
 
 #create repository 
-
 RUN svnadmin create /home/svn/myproject
 
 #modifite file config apache2
 RUN echo '<Location /svn>\n\
              DAV svn\n\
-	     SVNParentPath /var/lib/svn\n\
+	     SVNParentPath /home/svn\n\
 	     AuthType Basic\n\
 	     AuthName "Subversion Repository"\n\
 	     AuthUserFile /etc/apache2/dav_svn.passwd\n\
@@ -25,7 +24,7 @@ RUN echo '<Location /svn>\n\
 	  </Location>' >> /etc/apache2/mods-available/dav_svn.conf
 
 #change owner and group
-RUN chown -R www-data:www-data /var/lib/svn
+RUN chown -R www-data:www-data ./
 
 #Add user
 RUN echo 'vi-dh:$apr1$e2L.7IB0$ApCSYf2v75wFNr/ynHR07.' >> /etc/apache2/dav_svn.passwd
