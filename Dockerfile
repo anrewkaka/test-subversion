@@ -3,10 +3,10 @@ FROM debian:stretch
 #install subversion
 RUN mkdir /home/svn \
 	&& cd /home/svn \
-	&& apt-get update
+	&& apt-get update \
 	&& apt-get install -y subversion \
-	&& apache2 \
-	&& libapache2-mod-svn
+	apache2 \
+	libapache2-mod-svn
 
 #create repository 
 RUN svnadmin create /home/svn/myproject
