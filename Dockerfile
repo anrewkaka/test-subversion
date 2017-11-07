@@ -1,8 +1,8 @@
 FROM debian:stretch
 
 #install subversion
-RUN apt-get install -y update \
-	&& subversion \
+RUN apt-get install update
+RUN apt-get install -y subversion \
 	&& apache2 \
 	&& libapache2-mod-svn
 
