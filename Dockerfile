@@ -30,3 +30,5 @@ RUN sudo chown -R www-data:www-data /home/svn
 RUN echo 'vi-dh:$apr1$e2L.7IB0$ApCSYf2v75wFNr/ynHR07.' >> /etc/apache2/dav_svn.passwd
 
 RUN sudo /etc/init.d/apache2 restart
+
+RUN svnserve -r /home/svn/
