@@ -2,7 +2,6 @@ FROM debian:stretch
 
 #install subversion
 RUN mkdir /home/svn \
-	&& cd /home/svn \
 	&& apt-get update \
 	&& apt-get install -y subversion \
 	sudo \
@@ -25,7 +24,7 @@ RUN echo '<Location /svn>\n\
 	  </Location>' >> /etc/apache2/mods-available/dav_svn.conf
 
 #change owner and group
-RUN sudo chown -R www-data:www-data ./
+RUN sudo chown -R www-data:www-data /home/svn
 
 #Add user
 RUN echo 'vi-dh:$apr1$e2L.7IB0$ApCSYf2v75wFNr/ynHR07.' >> /etc/apache2/dav_svn.passwd
