@@ -5,6 +5,7 @@ RUN mkdir /home/svn \
 	&& cd /home/svn \
 	&& apt-get update \
 	&& apt-get install -y subversion \
+	sudo \
 	apache2 \
 	libapache2-mod-svn
 
