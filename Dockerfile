@@ -31,4 +31,4 @@ RUN echo 'vi-dh:$apr1$e2L.7IB0$ApCSYf2v75wFNr/ynHR07.' >> /etc/apache2/dav_svn.p
 
 RUN sudo /etc/init.d/apache2 restart
 
-RUN svnserve -r /home/svn/
+RUN svnserve -d -r /home/svn/
