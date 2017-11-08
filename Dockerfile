@@ -33,3 +33,5 @@ RUN sudo chown -R www-data:www-data /home/svn
 RUN echo 'vi-dh:$apr1$e2L.7IB0$ApCSYf2v75wFNr/ynHR07.' >> /etc/apache2/dav_svn.passwd
 
 #RUN svnserve -d -r /home/svn/
+
+EXPOSE 80
