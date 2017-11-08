@@ -1,9 +1,10 @@
 FROM debian:stretch
 
 #install subversion
-RUN mkdir /home/svn \
+RUN mkdir -p /home/svn \
 	&& apt-get update \
 	&& apt-get install -y subversion \
+	nano \
 	sudo \
 	apache2 \
 	libapache2-mod-svn
@@ -23,12 +24,12 @@ RUN echo '<Location /svn>\n\
 		</LimitExcept>\n\
 	  </Location>' >> /etc/apache2/mods-available/dav_svn.conf
 
+RUN sudo /etc/init.d/apache2 restart
+
 #change owner and group
 RUN sudo chown -R www-data:www-data /home/svn
 
 #Add user
 RUN echo 'vi-dh:$apr1$e2L.7IB0$ApCSYf2v75wFNr/ynHR07.' >> /etc/apache2/dav_svn.passwd
 
-RUN sudo /etc/init.d/apache2 restart
-
-RUN svnserve -d -r /home/svn/
+#RUN svnserve -d -r /home/svn/
