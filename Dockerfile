@@ -13,3 +13,6 @@ RUN mkdir -p /home/svn \
 EXPOSE 80
 
 RUN mkdir /opt/svn && chmod -R 777 /opt/svn
+
+#RUN sudo /etc/init.d/apache2 start
+CMD apachectl -D FOREGROUND
