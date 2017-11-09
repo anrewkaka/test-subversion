@@ -8,7 +8,7 @@ RUN mkdir -p /home/svn \
 	nano \
 	sudo \
 	apache2 \
-	libapache2-svn
+	libapache2-mod-svn
 
 RUN mkdir /opt/svn && chmod -R 777 /opt/svn
 
