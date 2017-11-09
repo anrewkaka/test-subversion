@@ -11,6 +11,3 @@ RUN mkdir -p /home/svn \
 	libapache2-mod-svn
 
 RUN mkdir /opt/svn && chmod -R 777 /opt/svn
-
-#RUN sudo /etc/init.d/apache2 start
-CMD apachectl -D FOREGROUND
